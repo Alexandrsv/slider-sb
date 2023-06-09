@@ -13,10 +13,3 @@ function App() {
 }
 
 export default App;
-
-const slides = [
-  "https://unsplash.it/400/200?image=1",
-  "https://unsplash.it/400/200?image=1",
-  "https://unsplash.it/400/200?image=1",
-  "https://unsplash.it/400/200?image=1",
-];

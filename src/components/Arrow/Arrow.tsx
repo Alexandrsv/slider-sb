@@ -1,17 +1,14 @@
 import { FC } from "react";
 import styles from "./Arrow.module.scss";
 import cn from "classnames";
-import { useSwiper } from "swiper/react";
 
-const Arrow: FC<{ direction: "prev" | "next"; onClick?: VoidFunction }> = ({
-  direction,
-  onClick,
-}) => {
-  const swiper = useSwiper();
-
+const Arrow: FC<{
+  direction: "prev" | "next";
+  onClick: VoidFunction;
+  timeBeforeNextSlide?: number;
+}> = ({ direction, onClick, timeBeforeNextSlide }) => {
   const onSlideChange = () => {
-    direction === "prev" ? swiper.slidePrev() : swiper.slideNext();
-    onClick && onClick();
+    onClick();
   };
 
   return (
@@ -22,7 +19,7 @@ const Arrow: FC<{ direction: "prev" | "next"; onClick?: VoidFunction }> = ({
       })}
       onClick={onSlideChange}
     >
-      {direction === "prev" ? "<" : ">"}
+      {direction === "prev" ? "<" : ">"} {timeBeforeNextSlide}
     </button>
   );
 };
