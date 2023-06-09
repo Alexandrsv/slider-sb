@@ -1,11 +1,9 @@
-import { FC, memo, useMemo } from "react";
+import { FC } from "react";
 import styles from "./Slide.module.scss";
 
 const Slide: FC<{ currentNumber: number }> = ({ currentNumber }) => {
-  const randomColor = useMemo(
-    () => `#${Math.floor(Math.random() * 16777215).toString(16)}`,
-    []
-  );
+  const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+
   return (
     <div
       style={{
@@ -19,4 +17,4 @@ const Slide: FC<{ currentNumber: number }> = ({ currentNumber }) => {
   );
 };
 
-export default memo(Slide);
+export default Slide;
